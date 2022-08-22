@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %} Login Page {% endblock %}
+
+
+{% block content %}    
+
+<div class="container mt-5">
+    <div class="container p-3" style="border: 1px solid black; border-radius: 5px;">
+        <form action="/cat/create/" method="POST">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Category Name</label>
+                <input type="name" name="cat_name" class="form-control" id="cat_name" aria-describedby="" >
+                
+            </div>
+            
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+            </form>
+    </div>
+</div>
+<!-- <script>
+    document.getElementById("demo").onclick = function() {send_product()}
+    function send_product() {
+        let xhr = new XMLHttpRequest();
+            xhr.open("POST", "127.0.0.1:5000/product");
+
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            xhr.onload = () => console.log(xhr.responseText);
+            let category = document.getElementById('category').value;
+            let product_name = document.getElementById('product_name').value;
+            let description = document.getElementById('description').value;
+            let amount = document.getElementById('amount').value;
+            let image = document.getElementById('image').value;
+            
+            let data = `{
+                "Id": 78912,
+                "Customer": "Jason Sweet",
+            }`;
+
+            xhr.send(data);
+    }
+  </script> -->
+{% endblock %}
+
+
