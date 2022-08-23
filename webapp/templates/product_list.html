@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %} Login Page {% endblock %}
+
+
+{% block content %}    
+
+<div class="container mt-5 bg-light">
+        
+        <div class="container">
+            <div class="row">
+            {% for i in list %}
+              <div class="col-sm mt-2 mb-2">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{i['image_url']}}" alt="{{i['product_name']}}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{i['product_name']}}</h5>
+                      <h3 class="card-title"><span style='font-size:20px;'>&#8377;</span>{{i['amount']}} <span><h6>M.R.P.</h6></span> </h3> 
+                      <form action="/product_description" method="POST">
+                        <input type="name" name="product_id" class="form-control" id="" aria-describedby="" value="{{i['id']}}" readonly hidden>
+                        <button type="submit" id="submit" class="btn btn-primary btn-sm" style="border-radius: 50px;">View Product</button>
+                      </form>
+                      
+                    </div>
+                  </div>
+                
+              </div>
+              
+              
+              {% endfor %}
+              
+            </div>
+        </div>
+        
+    
+</div>
+<!-- <script>
+    document.getElementById("demo").onclick = function() {send_product()}
+    function send_product() {
+        let xhr = new XMLHttpRequest();
+            xhr.open("POST", "127.0.0.1:5000/product");
+
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            xhr.onload = () => console.log(xhr.responseText);
+            let category = document.getElementById('category').value;
+            let product_name = document.getElementById('product_name').value;
+            let description = document.getElementById('description').value;
+            let amount = document.getElementById('amount').value;
+            let image = document.getElementById('image').value;
+            
+            let data = `{
+                "Id": 78912,
+                "Customer": "Jason Sweet",
+            }`;
+
+            xhr.send(data);
+    }
+  </script> -->
+{% endblock %}
+
+
